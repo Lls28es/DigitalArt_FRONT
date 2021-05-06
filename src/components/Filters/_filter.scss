@@ -1,0 +1,118 @@
+.Container-Filter {
+  z-index: 1;
+  margin: 0 auto;
+  top: 151px;
+  position: sticky;
+  display: flex;
+  width: 95%;
+  text-align: center;
+  flex-direction: column;
+  padding: 0;
+  max-width: 1500px;
+  min-width: 320px;
+}
+.filter {
+  width: 100%;
+  margin: 1px auto;
+  box-shadow: 0px 3px 2px 3px #0000003f;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #fafafa;
+  border-radius: 5px 5px 5px 0px;
+  padding: 5px 5px;
+  max-height: 48px;
+}
+
+.filter select {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+  padding: 1%;
+  height: 6%;
+  width: 20%;
+  min-width: 67px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #636060;
+  &:hover {
+    color: #1b1b1b;
+    cursor: pointer;
+  }
+  @media only screen and(max-width: 560px) {
+    font-size: 10px;
+    font-weight: 900;
+  }
+}
+
+.Option-button {
+  border: none;
+}
+
+.fa-sort-alpha-down,
+.fa-sort-alpha-up {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 0px;
+  margin: 0px;
+  padding: 5px;
+  width: 70px;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+
+  &:hover {
+    color: #19f9a4;
+    cursor: pointer;
+  }
+}
+
+.Button-Try-Again {
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+  height: 30px;
+  padding: 4px;
+  width: 110px;
+  border: none;
+  border-radius: 20px;
+}
+.Button-Try-Again:hover {
+  border: solid 1px #b0bec5;
+  background-color: #b0bec5;
+  color: #ffffff;
+}
+
+.Boton-Reset {
+  position: absolute;
+  top: 100%;
+  width: 48px;
+  min-width: 45px;
+  height: 80%;
+  font-size: 0.7rem;
+  border: none;
+  background: #616161;
+  color: #fff;
+  font-weight: 800;
+  border-radius: 0px 0px 27px 27px;
+  cursor: pointer;
+  transition: 150ms;
+  box-shadow: 0px 3px 2px 1px #00000070;
+  transition: 250ms;
+  &:hover {
+    // background-color: #1b1b1b;
+    color: #19f9a4;
+    box-shadow: 0px 1px 2px 1px #19f9a4;
+  }
+}
+.fa-star {
+  border: none;
+  background: transparent;
+  padding: 0px 1px;
+  font-size: 17px;
+  &:hover {
+    color: rgb(247, 250, 66);
+    text-shadow: 0 0 5px #1b1b1b;
+  }
+}

@@ -1,0 +1,198 @@
+//import
+// @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+
+//const
+$box-shadow: 0px 3px 3px -2px #19f9a400, 0px 3px 4px 0px #19f9a400, 0px 1px 8px 0px #19f9a4a1;
+
+$background: radial-gradient(circle at center center, rgba(33, 33, 33, 0), rgb(33, 33, 33)),
+  repeating-linear-gradient(135deg, rgb(33, 33, 33) 0px, rgb(33, 33, 33) 1px, transparent 1px, transparent 4px),
+  repeating-linear-gradient(45deg, rgb(56, 56, 56) 0px, rgb(56, 56, 56) 5px, transparent 5px, transparent 6px),
+  linear-gradient(90deg, rgb(33, 33, 33), rgb(33, 33, 33));
+
+$background-two: linear-gradient(
+    216deg,
+    rgba(77, 77, 77, 0.05) 0%,
+    rgba(77, 77, 77, 0.05) 25%,
+    rgba(42, 42, 42, 0.05) 25%,
+    rgba(42, 42, 42, 0.05) 38%,
+    rgba(223, 223, 223, 0.05) 38%,
+    rgba(223, 223, 223, 0.05) 75%,
+    rgba(36, 36, 36, 0.05) 75%,
+    rgba(36, 36, 36, 0.05) 100%
+  ),
+  linear-gradient(
+    44deg,
+    rgba(128, 128, 128, 0.05) 0%,
+    rgba(128, 128, 128, 0.05) 34%,
+    rgba(212, 212, 212, 0.05) 34%,
+    rgba(212, 212, 212, 0.05) 57%,
+    rgba(25, 25, 25, 0.05) 57%,
+    rgba(25, 25, 25, 0.05) 89%,
+    rgba(135, 135, 135, 0.05) 89%,
+    rgba(135, 135, 135, 0.05) 100%
+  ),
+  linear-gradient(
+    241deg,
+    rgba(55, 55, 55, 0.05) 0%,
+    rgba(55, 55, 55, 0.05) 14%,
+    rgba(209, 209, 209, 0.05) 14%,
+    rgba(209, 209, 209, 0.05) 60%,
+    rgba(245, 245, 245, 0.05) 60%,
+    rgba(245, 245, 245, 0.05) 69%,
+    rgba(164, 164, 164, 0.05) 69%,
+    rgba(164, 164, 164, 0.05) 100%
+  ),
+  linear-gradient(
+    249deg,
+    rgba(248, 248, 248, 0.05) 0%,
+    rgba(248, 248, 248, 0.05) 32%,
+    rgba(148, 148, 148, 0.05) 32%,
+    rgba(148, 148, 148, 0.05) 35%,
+    rgba(202, 202, 202, 0.05) 35%,
+    rgba(202, 202, 202, 0.05) 51%,
+    rgba(181, 181, 181, 0.05) 51%,
+    rgba(181, 181, 181, 0.05) 100%
+  ),
+  linear-gradient(92deg, hsl(214, 0%, 11%), hsl(214, 0%, 11%));
+
+//Styles
+.section-about {
+  padding: 2rem 0;
+  background-size: cover;
+  background-position: center center;
+  animation-name: grow;
+  animation-duration: 0.5s;
+  background-image: $background;
+}
+
+.team {
+  margin: 0 auto;
+  max-width: 1600px;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 48px;
+  align-items: center;
+}
+
+.card-front {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 266px;
+  height: 335px;
+  border: 3px solid #19f9a4a1;
+  margin-top: 62px;
+  border-radius: 10px;
+  margin: 75px 30px 0px 30px;
+  box-shadow: $box-shadow;
+  background-image: $background-two;
+}
+
+.card-back {
+  font-family: "Montserrat", sans-serif;
+  word-spacing: -2px;
+  letter-spacing: 0px;
+  line-height: 19px;
+  display: flex;
+  flex-direction: column;
+  width: 266px;
+  height: 335px;
+  border: 3px solid #19f9a4a1;
+  margin-top: 62px;
+  border-radius: 10px;
+  margin: 75px 30px 0px 30px;
+  box-shadow: $box-shadow;
+  background-color: #353535;
+}
+
+.body-back {
+  margin: 0px 15px;
+  text-align: justify;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #fafafa;
+}
+
+.profilePic {
+  border: 3px solid #19f9a3;
+  box-shadow: $box-shadow;
+  margin: -55px auto 0px auto;
+  width: 150px;
+  height: 150px;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+}
+
+.information {
+  margin-top: 6px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  color: #19f9a3;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.networks {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  bottom: -10px;
+  width: 260px;
+  height: 95px;
+  .icon {
+    width: 50px;
+    height: 50px;
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+    border: 3px solid #1ef6a3;
+    background-color: #fafafa;
+    color: #047c4e;
+    transition: 250ms;
+    &:hover {
+      box-shadow: $box-shadow;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.goToBack {
+  color: #1ef6a3;
+  width: 28px;
+  height: 44px;
+  position: relative;
+  margin: 0 auto;
+  transition: 250ms;
+  &:hover {
+    transform: scale(1.2);
+    color: #047c4e;
+    cursor: pointer;
+  }
+}
+
+.goToFront {
+  color: #1ef6a3;
+  width: 28px;
+  height: 44px;
+  position: relative;
+  margin: 0 auto;
+  &:hover {
+    color: #047c4e;
+    cursor: pointer;
+  }
+}

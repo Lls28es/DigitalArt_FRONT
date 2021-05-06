@@ -1,0 +1,11 @@
+.catalogue-wrapper {
+  display: flex;
+  padding: 10px 30px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin: 100px auto 20px auto;
+  max-width: 1500px;
+  scroll-behavior: smooth;
+}

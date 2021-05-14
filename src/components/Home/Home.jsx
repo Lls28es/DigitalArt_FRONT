@@ -87,7 +87,6 @@ function Home() {
 					</button>
 				</Link>
 			</div>
-			
 			<Slider />
 		</div>
 	);

@@ -12,13 +12,14 @@ export default function Wishlist() {
   const dispatch = useDispatch();
 
   const wishlistUser = useSelector((store) => store.reducerWishlist.wishlist);
+  console.log(wishlistUser, "1111")
 
   const openPreview = (e, image) => {
     e.preventDefault();
     setPreview(image);
   };
 
-  const deleteProduct = (e) => {
+  const deleteProductWish = (e) => {
     let body = {
       userId: wishlistUser.userId,
       productId: e,
@@ -52,8 +53,8 @@ export default function Wishlist() {
         </div>
         <div className="myProductsResults">
           {wishlistUser?.length !== 0 &&
-            wishlistUser?.products.length !== 0 &&
-            wishlistUser?.products.map((product) => (
+            wishlistUser?.products?.length !== 0 &&
+            wishlistUser?.products?.map((product) => (
               <div>
                 <div className="libraryPreview-wishlist">
                   <div className="divImage-wishlist">
@@ -67,19 +68,27 @@ export default function Wishlist() {
                   <div className="libraryProductName-wishlist">
                     <h4> {product.name}</h4>
                   </div>
-                  <div className="libraryProductPrice-wishlist">
-                    <h4> ${product.price}</h4>
-                  </div>
+                  {product.discount !== null 
+                  ?
+                    <div className="libraryProductPrice-wishlist">
+                      <h4>$ { product.price - (product.price * Number(product.discount.percent)) / 100 }</h4>
+                      <h4 className="ProductDiscounttWish"> $ {product.price}</h4>
+                    </div>
+                  :
+                    <div className="libraryProductPrice-wishlist">
+                      <h4> $ {product.price}</h4>
+                    </div>
+                  }
                   <div className="libraryDownload-wishlist">
                     <button
                       className=" button-wishlist"
                       type="button"
                       key={product.id}
-                      onClick={() => deleteProduct(product.id)}
+                      onClick={() => deleteProductWish(product.id)}
                     >
                       <GiIcons.GiHeartMinus />
                     </button>
-                    <Link to={`/product/${product.id}`}>
+                    <Link className="IconEyeWish" to={`/product/${product.id}`}>
                       <AiIcons.AiFillEye />
                     </Link>
                   </div>

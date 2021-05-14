@@ -16,8 +16,11 @@ function Order() {
   const shoppingCart = useSelector((state) => state.reducerShoppingCart.shoppingCart);
   let completed = JSON.parse(window.localStorage.getItem("completed"));
   const payments = useSelector((state) => state.payments);
+  
   const reducer = (accumulator, currentValue) =>
     Number(currentValue.price) + accumulator;
+
+  //mirar suma discount
   const sum = shoppingCart.reduce(reducer, 0);
 
   function validateEmail(email) {
@@ -26,13 +29,13 @@ function Order() {
   }
 
   let data = JSON.parse(localStorage.getItem("orderProducts")) || [];
-
+  //mirar pride discount
   const [input, setInput] = useState({
     name: "",
     email: "",
     productId: [...data].map((pi) => pi.id),
     price: [...data].map((p) => Number(p.price)),
-    total: sum,
+    total: 0,
     payment: "",
     methodId: 0,
     ok: currentUser?.id ? true : false
@@ -137,11 +140,6 @@ function Order() {
                 keep looking art
               </Link>
             </div>
-            <div className="cartSteps">
-              <span>1 <IoIcons.IoMdCheckmark className={input.ok ? "checkContactInfo" : "checkContactInfoHide"} /> Contact information</span>
-              <span className={input.ok ? "spanPayment" : "spanPaymentGrey"}>2 <IoIcons.IoMdCheckmark className={completed?.status ? "checkPayment" : "checkPaymentHide"} />
-              Payment method</span>
-            </div>
             <div className="Information-head">
               {currentUser.id ? (
                 <h2>
@@ -153,20 +151,25 @@ function Order() {
                 <h2>Contact Information</h2>
               )}
             </div>
+            <div className="cartSteps">
+              <span>1 <IoIcons.IoMdCheckmark className={input.ok ? "checkContactInfo" : "checkContactInfoHide"} /> Contact information</span>
+              <span className={input.ok ? "spanPayment" : "spanPaymentGrey"}>2 <IoIcons.IoMdCheckmark className={completed?.status ? "checkPayment" : "checkPaymentHide"} />
+              Payment method</span>
+            </div>
             <br />
             <br />
             <div className="Information-form">
               {currentUser.id ? (
                 <div className="name-email__container">
                   <div className="name__container">
-                    <span>Name:</span>
-                    <input
+                    <div className="order_Inputs"><span className="span_order">Name:</span></div>
+                    <div className="order_Inputs"><input className="input_order"
                       type="text"
                       placeholder="Name"
                       name="name"
                       value={(input.name = currentUser.name)}
                       onChange={handleInputChange}
-                    />
+                    /></div>
                   </div>
                   <div className="email__container">
                     <span>E-mail:</span>

@@ -4,10 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Route, useParams } from 'react-router-dom';
 import FilterProductByAuthor from '../FilterProductByAuthor';
 import Swal from 'sweetalert2';
-import {
-    addProducts, getAllProducts, deleteProductCategory,
-    editProductByBody, deleteProduct, editProductCategory
-} from '../../../../redux/actions/actionBack';
+import { getAllProducts, addProducts, editProductByBody,editProductCategory, deleteProduct, deleteProductCategory } from "../../../../redux/actions/actionProducts-Discounts";
 import { upgradeEditProducts } from '../../../../redux/actions/actionUpgrade';
 import '../../../../scss/components/_addProduct.scss';
 import { firebase } from '../../../../firebase/firebase-config';
@@ -16,11 +13,12 @@ import ReactCardFlip from 'react-card-flip';
 
 function AddProduct() {
 
-    const [isFlipped, setIsFlipped] = useState(false);
+	const [isFlipped, setIsFlipped] = useState(false);
 
 	const handleclick = () => {
 		setIsFlipped(!isFlipped);
 	};
+
     const dispatch = useDispatch()
     const allArtist = useSelector((store) => store.reducerArtist.allArtistCache)
     const allCategories = useSelector((store) => store.reducerCategories.allCategoriesCache)
@@ -67,7 +65,7 @@ function AddProduct() {
                 preview: findProduct.preview,
                 stock: findProduct.stock ? findProduct.stock : 0,
                 initialStock: findProduct.initialStock ? findProduct.initialStock : 0,
-                categories: findProduct.categories.map(cat => cat.id),
+                categories: findProduct.categories?.map(cat => cat.id),
                 author: findProduct.author,
                 seriesId: findProduct.seriesId,
             })
@@ -148,8 +146,6 @@ function AddProduct() {
                         'this product is updated',
                         'success'
                     )
-                } else {
-                    e.target.value = 0;
                 }
             })
         } else {
@@ -172,8 +168,7 @@ function AddProduct() {
                             'success'
                         )
                         location.reload();
-                    } else {
-                        e.target.value = 0;
+                    
                     }
                 })
             }
@@ -214,9 +209,7 @@ function AddProduct() {
                     'this product is deleted',
                     'success'
                 )
-            } else {
-                e.target.value = 0;
-            }
+            } 
         })
     }
 
@@ -297,12 +290,16 @@ function AddProduct() {
 				<div className="Left-side container">
 					<div className="filProductByAuthor">
 						<FilterProductByAuthor />
+						<div className="manageDiscounts">
+							<span>Manage the Product Discounts</span>
+							<button className="Discounts" onClick={handleclick}>GO</button>
+						</div>
 					</div>
 					<div className="divAP">
 						{id ?
-						<h2 className="title">Edit Product</h2>
-						:
-						<h2 className="title">Add Product</h2>
+							<h2 className="title">Edit Product</h2>
+							:
+							<h2 className="title">Add Product</h2>
 						}
 						<form className="formAP" onSubmit={submitForm}>
 							<div className="rigth">
@@ -409,23 +406,23 @@ function AddProduct() {
 									</select>
 									{id
 										? product.categories.map((p) => (
-												<span
-													className="catego"
-													key={p?.id}
-													onClick={(event) => handleInputDeleteCa(event, p)}
-												>
-													{allCategories.find((c) => c.id == p)?.name}
-												</span>
-										  ))
+											<span
+												className="catego"
+												key={p?.id}
+												onClick={(event) => handleInputDeleteCa(event, p)}
+											>
+												{allCategories.find((c) => c.id == p)?.name}
+											</span>
+										))
 										: product.categories.map((id) => (
-												<span
-													className="catego"
-													key={id?.id}
-													onClick={(event) => handleInputDeleteCa(event, id)}
-												>
-													{allCategories.find((c) => c.id == id)?.name}
-												</span>
-										  ))}
+											<span
+												className="catego"
+												key={id?.id}
+												onClick={(event) => handleInputDeleteCa(event, id)}
+											>
+												{allCategories.find((c) => c.id == id)?.name}
+											</span>
+										))}
 								</div>
 							</div>
 							<div className="left">
@@ -524,7 +521,6 @@ function AddProduct() {
 									<input
 										className="SelectorFile"
 										type="file"
-										title="otra cosa"
 										onChange={handleOnChange}
 										name="file"
 									/>
@@ -582,7 +578,7 @@ function AddProduct() {
 										<input
 											className="EditOrAdd"
 											type="button"
-											value="Delete"
+											value="Disable"
 											onClick={deleteProducts}
 										/>
 									</div>
@@ -593,34 +589,33 @@ function AddProduct() {
 								)}
 							</div>
 						</form>
-                                <button onClick={handleclick}>Sales</button>
 					</div>
 					<progress className="progress" value={uploadValue.uploadValue} max="100">
 						{uploadValue.uploadValue} %
 					</progress>
 				</div>
-					<div className="imgfile">
-						<div className="image">
-							{id ? 
-								<img className="image" src={product.preview} />
-								: 
-								<img className="image" src={uploadValue.picture} />
-							}
-						</div>
-						{id || uploadValue.picture? 
-						<input type="submit" value="delete image" onClick={deletefile} />
-						 : null}
+				<div className="imgfile">
+					<div className="image">
+						{id ?
+							<img className="image" src={product.preview} />
+							:
+							<img className="image" src={uploadValue.picture} />
+						}
 					</div>
+					{id || uploadValue.picture ?
+						<input type="submit" value="delete image" onClick={deletefile} />
+						: null}
+				</div>
 			</div>
 			<div className="mainDivAP">
-                <div className="Left-side container">
-                    <div className="filProductByAuthor">
-				<SalesProduct />
-                    </div>
-                    
-				<button onClick={handleclick}>Sales</button>
+				<div className="Left-side container">
+					<div className="filProductByAuthor">
+						{isFlipped && <SalesProduct />}
+					</div>
 
-                </div>
+					<button className="BackProducts" onClick={handleclick}> Back</button>
+
+				</div>
 			</div>
 		</ReactCardFlip>
 	);

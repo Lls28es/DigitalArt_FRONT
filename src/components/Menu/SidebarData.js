@@ -26,7 +26,7 @@ export const SidebarData = [
     {
         title: 'Wishlist',
         path: '/user/wishlist',
-        icon: <FaIcons.FaImages />,
+        icon: <FaIcons.FaHeart />,
         cName: 'navm-text',
         belong: [101]
     },
@@ -37,13 +37,13 @@ export const SidebarData = [
         cName: 'navm-text',
         belong: [101]
     },
-    {
-        title: 'Questions',
-        path: '/user/questions',
-        icon: <FiIcons.FiHelpCircle />,
-        cName: 'navm-text',
-        belong: [102,101]
-    },
+    // {
+    //     title: 'Questions',
+    //     path: '/user/questions',
+    //     icon: <FiIcons.FiHelpCircle />,
+    //     cName: 'navm-text',
+    //     belong: [102,101]
+    // },
     {
         title: 'Products',
         path: '/admin/Product',

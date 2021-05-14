@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../../redux/actions/actionFront";
-import { editProductStock } from "../../redux/actions/actionBack";
+import { editProductStock } from "../../redux/actions/actionStock-Review";
 import { removeToCartUser } from "../../redux/actions/actionOrder";
 import { formUserOrder, formGuestOrder } from "../../redux/actions/actionOrder";
 import { stripe } from "../../redux/actions/payments";
@@ -36,7 +36,9 @@ const Checkout = () => {
   // Verificando el estado del pago
   useEffect(() => {
     let guestOrder = JSON.parse(localStorage.getItem("guestOrderDetails"));
+    console.log(guestOrder, 1)
     let guestProducts = JSON.parse(localStorage.getItem("orderProducts"));
+    console.log(guestProducts, 2)
     const loggedUser = JSON.parse(window.localStorage.getItem("CurrentUser"));
     const beforeOrder = JSON.parse(localStorage.getItem("beforeOrder"));
     const query = new URLSearchParams(window.location.search);
@@ -105,6 +107,7 @@ const Checkout = () => {
         })
           .then(
             dispatch(
+
               formGuestOrder({
                 name: guestOrder.name,
                 email: guestOrder.email,
@@ -169,10 +172,9 @@ const Checkout = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // calculate total
   const handleSumTotal = () => {
     const reducer = (accumulator, currentValue) =>
-      Number(currentValue.price) + accumulator;
+		(currentValue.discountPrice ? Number(currentValue.discountPrice) : Number(currentValue.price)) + accumulator;
     const sum = shoppingCart.reduce(reducer, 0);
     return sum;
   };
@@ -182,7 +184,8 @@ const Checkout = () => {
     if (currentUser.id) {
       let total = 0;
       shoppingCart.forEach((product) => {
-        total += product.price ? Number(product.price) : 0;
+
+        total += productOnClick.price ? Number(productOnClick.price) : 0;
       });
       total = total - Number(productOnClick.price);
       dispatch(

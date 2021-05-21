@@ -174,7 +174,7 @@ function Reviews({ currentUser, productId }) {
 						</div>
 					))
 				) : (
-					<span className="noReviewsYet">No reviews yet :(</span>
+					<span className="noReviewsYet">No reviews yet ...</span>
 				)}
 			</div>
 			<br />

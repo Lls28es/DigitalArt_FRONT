@@ -219,6 +219,10 @@
 }
 
 .noReviewsYet {
+    display: flex;
+    align-content: flex-start;
+    margin: 50px 0px 50px 0px;
+    font-weight: 500;
     font-size: 18px;
     white-space: pre;
     padding-left: 20px;

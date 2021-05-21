@@ -68,7 +68,7 @@ export default function Wishlist() {
                   <div className="libraryProductName-wishlist">
                     <h4> {product.name}</h4>
                   </div>
-                  {product.discount !== null 
+                  {product.discount !== null && product.discount !== undefined
                   ?
                     <div className="libraryProductPrice-wishlist">
                       <h4>$ { product.price - (product.price * Number(product.discount.percent)) / 100 }</h4>

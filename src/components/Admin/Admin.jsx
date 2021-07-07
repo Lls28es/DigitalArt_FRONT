@@ -1,10 +1,11 @@
 /*eslint-disable*/
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Dashboard from './Dashboard'
-import '../../scss/components/_admin.scss';
+import DashboardAdmin from './DashboardAdmin.jsx'
 import { getAllUsers, getAllrRoles } from '../../redux/actions/actionUsers-Roles'
 import { getAllOrders } from "../../redux/actions/actionOrder"
+
+import '../../scss/components/_admin.scss';
 
 function Admin() {
 
@@ -19,8 +20,8 @@ function Admin() {
   }, []);
 
   return (
-    <div className="Admin">
-      <Dashboard />
+    <div className="Admin" id="Admin">
+      <DashboardAdmin />
     </div>
   );
 }

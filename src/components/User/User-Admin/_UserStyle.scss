@@ -1,0 +1,246 @@
+
+.profile-UserStyle {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    scroll-behavior: smooth;
+ 
+    .divisor-UserStyle {
+      margin: 20px 0px;
+    }
+
+    hr {
+      margin-bottom: 1px;
+      color: rgb(175, 175, 175);
+    }
+
+    .title-UserStyle {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: #13ae73;
+      margin-bottom: 0px;
+  
+      h1 {
+        margin: 0px;
+        font-size: 40px;
+        padding-left: 0;
+
+        @media only screen and(max-width: 600px) {
+          font-size: 30px;
+        }
+      }
+
+      h2 {
+        margin-left: 5px;
+        color: rgb(113, 121, 124);
+        margin-bottom: 20px;
+      }
+    }
+
+    .table-UserStyle{
+        border: 0px;
+   
+        .headtable-UserStyle {
+            display: flex;
+            background-color: #111111;
+            border: 1px solid #030303;
+            box-shadow: 0px 5px 15px 7px #386b58;
+            color: #19f9a4;
+            height: 40px;
+            align-items: center;
+            text-align: -webkit-center;
+            padding: 10px 20px;
+            font-weight: 100;
+
+            @media only screen and(max-width: 600px) {
+                font-size: 12px;
+                padding: 0px;
+            }
+
+            .tdheadtable-UserStyle {
+ 
+                align-items: center;
+                justify-content: center;
+            }
+            .tableheaderdate-UserStyle {
+                align-items: center;
+                justify-content: center;
+            }
+            .tableheadertate-UserStyle {
+                align-items: center;
+                justify-content: center;
+            }
+            .tableheaderprice-UserStyle {
+                align-items: center;
+                justify-content: center;
+                max-width: 80px;
+            }
+
+            @media only screen and(max-width: 600px) {
+                // padding: 10px 0px;
+                // padding-right: 25px;
+                .tableheaderdateUserStyle {
+                    align-items: center;
+                    justify-content: center;
+                }
+                .tableheadertate-UserStyle {
+                    align-items: center;
+                    justify-content: center;
+                }
+                .tableheadertate-UserStyle {
+                    align-items: center;
+                    justify-content: center;
+                    
+                }
+            }
+        }
+        .bodytable-UserStyle {
+            display: flex;
+            // flex-direction: row;
+            padding: 10px 20px;
+            background-color: #292828;
+        
+            color: #fafafa;
+            border-top: 3px solid #323333;
+            max-height: 100px;
+            border-bottom: 3px solid #030303;
+            box-shadow: 0px 1px 12px 10px #00000071;
+
+            @media only screen and(max-width: 600px) {
+                padding: 10px 20px;
+            }
+           
+            .thimage-UserStyle {
+                width: 50%;
+                display: flex;
+                align-items: center;
+                text-align: -webkit-center;
+                justify-content: center;
+
+                @media only screen and(max-width: 600px) {
+                    display: flex;
+                    width: 50px;
+                }
+
+                .ing-UserStyle {
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: cover;
+                    border-radius: 2px 2px 0 0;
+                    box-shadow: 2px 3px 15px #2c2c2c;
+                }
+            }
+
+            .thname-UserStyle {
+                font-size: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                @media only screen and(max-width: 600px) {
+                    font-size: 12px;
+                    width: 100px;
+                    padding-left: 20px;
+                }
+            }
+
+            .thlink-UserStyle a {
+                font-size: 27px;
+                color: #19f9a9;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                @media only screen and(max-width: 600px) {
+                    font-size: 20px;
+                }
+            }
+            
+            // .thlink-UserStyle {
+            //     // padding-right: 6%;
+            //     display: flex;
+            //     flex-direction: column;
+            //     justify-content: space-around;
+            //     @media only screen and(max-width: 600px) {
+            //         width: 40px;
+            //     }
+                
+            // }
+
+            .option-UserStyle{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 16px;
+            }
+            .price-UserStyle{
+                max-width: 80px;
+            }
+    
+        
+        }
+       
+    }
+    .seemore-UserStyle {
+        position: relative;
+        top: 3px;
+
+        .seemoreDownload-UserStyle{
+            font-size: 24px;
+        }
+
+        .seemoreText-UserStyle{
+            font-size: 16px;
+        }
+        
+        .orderIDVisualize{
+            font-size: 20px;
+        }
+        
+    }
+    .seemore-UserStyle a {
+        display: inline-flex;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        color: #19f9a4;
+        transition: 450ms;
+        &:hover {
+            color: #242323;
+        }
+     
+    }
+    .orderIDVisualize {
+                
+        font-size: 16px;
+    }
+    
+    .seemore-UserStyle {
+        @media only screen and(max-width: 600px) {
+            // text-align: center;
+            padding-left: 5px;
+        }
+    }
+ 
+ 
+
+    tr{
+        border-top: 3px solid #323333;
+        td{
+
+            border-top: 3px solid #32333300;
+            width: 100%;
+            text-align: -webkit-center;
+        }
+        th{
+            text-align: -webkit-center;
+
+        }
+    }
+
+}
+
+

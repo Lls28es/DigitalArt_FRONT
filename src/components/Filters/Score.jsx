@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { orderStar, getBackup, choiseStar } from '../../redux/actions/actionFront';
 import { paginate } from '../../redux/actions/request';
-import './_filter.scss';
+
+import '../../scss/components/_filter.scss';
 
 function Score() {
+	
 	const [toggle, setToggle] = useState(false);
 	const dispatch = useDispatch();
 	const actualStars = useSelector((state) => state.reducerProduct.actualStars);
@@ -24,8 +26,20 @@ function Score() {
 		e === 'All' ? dispatch(getBackup()) : (dispatch(paginate(1)), dispatch(choiseStar(e)));
 	};
 
+
+
 	return (
-		<>
+		<div id="Score">
+			<div className="Container-Iconos">
+				{selectAuthor || selectCategorie ? (
+					''
+				) : toggle ? (
+					<button value="starUp" className="far fa-star " id="star" onClick={(e) => handleStar(e)}></button>
+				) : (
+					<button value="starDown" className="fas fa-star" id="star" onClick={(e) => handleStar(e)}></button>
+				)}
+			</div>
+
 			<select onChange={(e) => handleChoiseStar(e.target.value)}>
 				<option value="All">Stars</option>
 				{selectAuthor || selectCategorie ? (
@@ -43,17 +57,7 @@ function Score() {
 					</>
 				)}
 			</select>
-
-			<div className="Container-Iconos">
-				{selectAuthor || selectCategorie ? (
-					''
-				) : toggle ? (
-					<button value="starUp" className="far fa-star " id="star" onClick={(e) => handleStar(e)}></button>
-				) : (
-					<button value="starDown" className="fas fa-star" id="star" onClick={(e) => handleStar(e)}></button>
-				)}
-			</div>
-		</>
+		</div>
 	);
 }
 export default Score;

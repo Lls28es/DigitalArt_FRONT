@@ -3,6 +3,7 @@ import axios from 'axios';
 import * as TYPES from '../types/index';
 import { requestData, requestSuccess } from './request.js'
 
+
 export const getUserWhislist = (userId) => {
     return (dispatch) => {
         axios

@@ -1,16 +1,19 @@
 /*eslint-disable*/
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { SidebarData } from './SidebarData';
+import { IconContext } from 'react-icons';
 import * as FiIcons from 'react-icons/fi';
 import * as AiIcons from 'react-icons/ai'
 import { setMenu } from '../../redux/actions/request'
 import { logout } from '../../redux/actions/auth';
-import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
-import { IconContext } from 'react-icons';
+
 import '../../scss/components/_menu.scss';
 
+
 function Menu() {
+
     const [rol, setRol] = useState(102)
     const dispatch = useDispatch()
     const { menu } = useSelector((store) => store.reducerLoading)
@@ -35,7 +38,7 @@ function Menu() {
     }
 
     return (
-        <>
+        <div id="Menu">
             <IconContext.Provider value={{ color: ' #19f9a4 ' }}>
                 <nav className={menu === "1" ? 'navmenu active' :
                     menu === "0" ? 'navmenu' :
@@ -84,7 +87,7 @@ function Menu() {
                     </ul>
                 </nav>
             </IconContext.Provider>
-        </>
+        </div>
     )
 }
 

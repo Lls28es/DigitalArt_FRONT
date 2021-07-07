@@ -2,25 +2,22 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { IoArrowUndoSharp } from "react-icons/io5";
+import * as AiIcons from "react-icons/ai";
+import Loading from "../Loading/Loading";
+import FunctionStar from "../FunctionStar/FunctionStar";
+import Reviews from "./Reviews.jsx";
 import { getProductReview } from "../../redux/actions/actionStock-Review";
 import { getOneProduct } from "../../redux/actions/actionProducts-Discounts"
 import { addToCart, removeFromCart } from "../../redux/actions/actionFront";
-import {
-  addToCartUser,
-  removeToCartUser,
-} from "../../redux/actions/actionOrder";
-import Loading from "../Loading/Loading";
-import FunctionStar from "../FunctionStar/FunctionStar";
-import Reviews from "../Reviews/Reviews.jsx";
+import { addToCartUser, removeToCartUser } from "../../redux/actions/actionOrder";
+import { putUserWhislist, deleteUserWhislist } from "../../redux/actions/actionWishlist";
+
 import "../../scss/components/_productDetails.scss";
-import { IoArrowUndoSharp } from "react-icons/io5";
-import * as AiIcons from "react-icons/ai";
-import {
-  putUserWhislist,
-  deleteUserWhislist,
-} from "../../redux/actions/actionWishlist";
+
 
 function ProductDetails() {
+
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -181,7 +178,7 @@ function ProductDetails() {
     return <Loading />;
   } else {
     return (
-		<div className="big-container">
+		<div className="big-container" id="ProductDetails">
 			<div className="product-wrapper">
 				<div className="product-preview">
 					<img className="preview" src={preview} alt={name} />

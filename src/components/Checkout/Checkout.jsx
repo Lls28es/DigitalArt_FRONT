@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import Swal from "sweetalert2";
+// import Slider from '../Carousel/Slider'
 import { removeFromCart } from "../../redux/actions/actionFront";
 import { editProductStock } from "../../redux/actions/actionStock-Review";
 import { removeToCartUser } from "../../redux/actions/actionOrder";
@@ -10,11 +12,12 @@ import {
   cleanShoopingCart,
   sendEmailOrderSuccess,
 } from "../../redux/actions/actionFront.js";
-import Swal from "sweetalert2";
-import "./_checkout.scss";
-// import Slider from '../Carousel/Slider'
+
+import "../../scss/components/_checkout.scss";
+
 
 const Checkout = () => {
+
   const history = useHistory();
   const dispatch = useDispatch();
   const shoppingCart = useSelector(
@@ -236,7 +239,7 @@ const Checkout = () => {
 
   return (
     <>
-      <div className="checkout-container">
+      <div className="checkout-container" id="Checkout">
         <div className="Checkout">
           <div className="Checkout-content">
             {shoppingCart.length > 0 ? (

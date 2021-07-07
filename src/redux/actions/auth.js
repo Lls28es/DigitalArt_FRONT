@@ -6,10 +6,12 @@ import { setError } from "./uiError";
 import { pushStorageToCartUser, emptyToCartUser } from "./actionOrder";
 import Swal from "sweetalert2";
 
+
 export const isLogged = (payload) => ({
   type: TYPES.AUTH_LOGIN,
   payload: payload,
 });
+
 export const setCurrentUser = (payload) => ({
   type: TYPES.SET_CURRENT_USER,
   payload: payload,

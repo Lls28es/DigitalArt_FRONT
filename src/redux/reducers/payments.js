@@ -1,6 +1,7 @@
 /*eslint-disable*/
 import * as TYPES from "../types/index";
 
+
 const initialState = {
   mercadoPago: {
     method: "",

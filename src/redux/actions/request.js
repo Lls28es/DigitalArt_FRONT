@@ -1,6 +1,7 @@
 /*eslint-disable*/
 import * as TYPES from '../types/index';
 
+
 // LOADING ACTIONS
 export const requestData = () => ({
   type: TYPES.REQUEST_DATA,

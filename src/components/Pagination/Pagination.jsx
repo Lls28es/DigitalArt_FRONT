@@ -2,9 +2,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { paginate } from '../../redux/actions/request';
+
 import '../../scss/components/_pagination.scss';
 
+
 function Pagination({ cardsPerPage, totalCards }) {
+
   const dispatch = useDispatch()
   const pageNumbers = [];
 
@@ -25,7 +28,7 @@ function Pagination({ cardsPerPage, totalCards }) {
   }
 
   return (
-    <div>
+    <div id="Pagination">
       <ul className="pagination">
         <button className="pageButton" onClick={() => previusPage(page)}>{`<`}</button>
         {

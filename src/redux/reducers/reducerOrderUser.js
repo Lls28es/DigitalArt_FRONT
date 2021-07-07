@@ -1,7 +1,7 @@
 /*eslint-disable*/
-
 import * as TYPES from '../types/index';
 import * as TYPESUP from '../types/typesUpgrade';
+
 
 const initialState = {
   currentOrder: [],

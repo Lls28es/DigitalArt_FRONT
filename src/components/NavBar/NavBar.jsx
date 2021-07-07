@@ -1,15 +1,17 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { logout } from "../../redux/actions/auth";
-import { setMenu } from "../../redux/actions/request";
 import { useSelector, useDispatch } from "react-redux";
 import * as FaIcons from "react-icons/fa";
 import * as HiIcons from "react-icons/hi";
 import { FaHeart } from 'react-icons/fa';
+import { logout } from "../../redux/actions/auth";
+import { setMenu } from "../../redux/actions/request";
 
 import "../../scss/components/_navBar.scss";
 
+
 function NavBar() {
+
   const dispatch = useDispatch();
   const { currentUser } = useSelector((store) => store.auth);
   const shoppingCart = useSelector(
@@ -28,7 +30,7 @@ function NavBar() {
   useEffect(() => { }, [currentUser]);
 
   return (
-		<nav className="navbar">
+		<nav className="navbar" id="NavBar">
 			<div className="navleft">
 				<Link to="#" className="sandwich">
 					{menu === '0' ? (

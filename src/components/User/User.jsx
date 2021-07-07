@@ -1,10 +1,12 @@
 /*eslint-disable*/
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import DashboardUser from './DashboardUser'
 import { getAllUserOrders } from "../../redux/actions/actionOrder";
 
-import DashboardUser from './DashboardUser'
+
 export default function User() {
+    
   const dispatch = useDispatch()
     const currentUser = JSON.parse(localStorage.getItem("CurrentUser"));
 
@@ -14,8 +16,8 @@ export default function User() {
     }, []);
   
     return (
-        <>
+        <div id="User">
             <DashboardUser/>
-        </>
+        </div>
     )
 }

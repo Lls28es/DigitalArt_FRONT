@@ -2,7 +2,9 @@
 import axios from "axios";
 import * as TYPES from "../types/index";
 
+
 export const mercadoPago = (orderId) => async (dispatch) => {
+  
   try {
     const response = await axios.post(
       `${process.env.REACT_APP_BACK_URL}/post/payments/mercado-pago/create-preference/${orderId}`

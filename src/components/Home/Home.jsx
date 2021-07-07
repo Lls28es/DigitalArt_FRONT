@@ -1,13 +1,15 @@
 import React from 'react';
+import Particles from 'react-particles-js';
+import { Link } from 'react-router-dom';
+import Slider from './Carousel.jsx';
+
 import '../../scss/containers/_home.scss';
-import Particles from 'react-particles-js'
-import { Link } from 'react-router-dom'
-import Slider from '../Carousel/Image.jsx'
+
 
 function Home() {
 
 	return (
-		<div className="home-wrapper">
+		<div className="home-wrapper" id="Home">
 			<div className="landing-section">
 				<Particles
 					id="particles-js"

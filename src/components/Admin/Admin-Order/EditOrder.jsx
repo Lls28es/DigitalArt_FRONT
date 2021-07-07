@@ -9,8 +9,7 @@ import {
     getAllOrders 
 } from "../../../redux/actions/actionOrder";
 
-import '../../../scss/components/_EditOrder.scss';
-import '../../../scss/components/_userOrder.scss';
+import '../../../scss/components/_editOrder.scss';
 
 function EditOrder() {
 

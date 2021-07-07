@@ -10,19 +10,20 @@ import {
 } from "../../../redux/actions/actionOrder";
 
 import '../../../scss/components/_EditOrder.scss';
+import '../../../scss/components/_userOrder.scss';
 
 function EditOrder() {
 
     const dispatch = useDispatch()
 
     const {id} = useParams();
-    // const [orderState, setOrderState] = useState([])
+    const [orderState, setOrderState] = useState([])
 
-    // const allOrders = useSelector((store) => store.reducerOrderUser.allOrders)
-    // const allUsers = useSelector((store) => store.reducerOrderUser.allUsers)
-    // const userOrders = useSelector((store) => store.reducerOrderUser.userOrders);
-    // const detailOrder = useSelector(store => store.reducerOrderState.detailOrder)
-    // const loading = useSelector((store) => store.reducerLoading.loading)
+    const allOrders = useSelector((store) => store.reducerOrderUser.allOrders)
+    const allUsers = useSelector((store) => store.reducerOrderUser.allUsers)
+    const userOrders = useSelector((store) => store.reducerOrderUser.userOrders);
+    const detailOrder = useSelector(store => store.reducerOrderState.detailOrder)
+    const loading = useSelector((store) => store.reducerLoading.loading)
 
     useEffect(() => {
 

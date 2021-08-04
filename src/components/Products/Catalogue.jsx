@@ -48,10 +48,7 @@ function Catalogue() {
     return (
       <div id="Catalogue">
         <div className="catalogue-wrapper">
-          {currentProducts &&
-            currentProducts.map((artwork, i) => (
-              <ProductCard key={`${i}`} data={artwork} />
-            ))}
+          {currentProducts && currentProducts.map((artwork, i) => artwork.available == true ? <ProductCard key={`${i}`} data={artwork} /> :null )}
         </div>
         <div className="paginate">
           <Pagination

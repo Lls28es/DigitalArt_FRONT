@@ -29,10 +29,9 @@ export default function UserLibrary() {
 
 
     const openPreview = (e, image) => {
-e.preventDefault()
-console.log(image)
-setPreview(image)
 
+        e.preventDefault()
+        setPreview(image)
     }
 
     return (

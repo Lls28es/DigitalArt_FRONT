@@ -15,7 +15,6 @@ export default function UserWishlist() {
   const dispatch = useDispatch();
 
   const wishlistUser = useSelector((store) => store.reducerWishlist.wishlist);
-  console.log(wishlistUser, "1111")
 
   const openPreview = (e, image) => {
     e.preventDefault();

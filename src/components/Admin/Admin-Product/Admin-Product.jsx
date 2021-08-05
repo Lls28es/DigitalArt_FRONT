@@ -16,6 +16,7 @@ import {
 } from "../../../redux/actions/actionProducts-Discounts";
 import { upgradeEditProducts } from '../../../redux/actions/actionUpgrade';
 
+
 import '../../../scss/components/_Admin-Product.scss';
 
 function AdminProduct() {
@@ -174,8 +175,7 @@ function AdminProduct() {
                             'this product is SAlved',
                             'success'
                         )
-                        location.reload();
-                    
+                        //location.reload();
                     }
                 })
             }
@@ -216,8 +216,10 @@ function AdminProduct() {
                     'this product is deleted',
                     'success'
                 )
+				dispatch(getAllProducts());
             } 
         })
+
     }
 
     if (productOrError && productOrError.status === 200) {
@@ -597,7 +599,7 @@ function AdminProduct() {
 							</div>
 						</form>
 					</div>
-					<progress className="progress" value={uploadValue.uploadValue} max="100">
+					<progress className="progress" value={uploadValue.uploadValue === 0 || uploadValue.uploadValue === undefined ? 0 : uploadValue.uploadValue} max="100">
 						{uploadValue.uploadValue} %
 					</progress>
 				</div>

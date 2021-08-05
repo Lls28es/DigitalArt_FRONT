@@ -77,7 +77,6 @@ const SalesProduct = () => {
 
   const getPriceWithDiscount = (discount, price) => {
     const discountPrice = price - (price * Number(discount)) / 100;
-    console.log(discountPrice);
     return discountPrice;
   };
 

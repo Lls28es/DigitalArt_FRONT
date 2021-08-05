@@ -362,14 +362,13 @@ export const editCategory = (categoryId, category) => (
 export const editUser = (userId, user) => (
 
   (dispatch) => {
-console.log('entro aqui')
-console.log(user, userId)
+
     try {
       dispatch(requestData())
       axios
         .put(`${process.env.REACT_APP_BACK_URL}/put/user/${userId}`, user)
         .then((res) => {
-          console.log("resp action", res.data)
+
           //no yo... nadieeee entiende para que es esto.. NADIE
           dispatch({            
             type: TYPES.PUT_USER,

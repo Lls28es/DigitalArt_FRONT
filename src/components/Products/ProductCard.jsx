@@ -53,9 +53,9 @@ function ProductCard(props) {
   };
   let priceDiscpunt = 0;
 
-  if( discount !== null){
+  if( discount !== null && discount !== null){
 
-    priceDiscpunt = price - (price * Number(discount.percent)) / 100;
+    priceDiscpunt = price - (price * Number(discount)) / 100;
     objProduct.price = priceDiscpunt;
   }
 

@@ -52,7 +52,6 @@ function PaypalButton({input} ) {
 				})
 					.then(() => {
 						let user = { id: currentOrder[0].id, state: 'completed', payment: paymentId, methodId: 3 };
-						console.log(user)
 						dispatch(formUserOrder(user));
 					})
 					.then(() => {

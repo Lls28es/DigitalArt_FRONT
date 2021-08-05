@@ -39,9 +39,7 @@ const Checkout = () => {
   // Verificando el estado del pago
   useEffect(() => {
     let guestOrder = JSON.parse(localStorage.getItem("guestOrderDetails"));
-    console.log(guestOrder, 1)
     let guestProducts = JSON.parse(localStorage.getItem("orderProducts"));
-    console.log(guestProducts, 2)
     const loggedUser = JSON.parse(window.localStorage.getItem("CurrentUser"));
     const beforeOrder = JSON.parse(localStorage.getItem("beforeOrder"));
     const query = new URLSearchParams(window.location.search);

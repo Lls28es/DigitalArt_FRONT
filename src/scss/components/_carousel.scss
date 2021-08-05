@@ -1,7 +1,7 @@
 .container-carousel {
    overflow: hidden;
    position: absolute;
-   bottom: 5px;
+   bottom: 0px;
    left: 0;
    width: 100%;
    @media only screen and(max-width: 560px) {
@@ -10,7 +10,7 @@
 }
 
 .slider {
-   height: 25vh;
+   height: 20vh;
    margin: 0 auto;
    display: flex;
    justify-content: center;
@@ -18,11 +18,12 @@
    width: 100vw;
    display: flex;
    background: rgb(25, 25, 25);
+   background-color: black;
 }
 
 .slide-track {
    display: flex;
-   width: 70vw;
+   width: 100vw;
    animation: scroll 20s infinite alternate;
 }
 .Slide {

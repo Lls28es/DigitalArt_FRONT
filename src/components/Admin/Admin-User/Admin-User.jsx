@@ -100,15 +100,12 @@ const AdminUser = () => {
     });
 
     let rol = e.target.options[e.target.selectedIndex].text;
-    console.log(rol);
   }
 
   function submitRol(event) {
     event.preventDefault();
 
     if (selectedUser) {
-
-    console.log(selectedUser)
 
       Swal.fire({
         title: `Do you want to save the changes in User ${selectedUser.name}?`,
@@ -119,7 +116,7 @@ const AdminUser = () => {
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-          console.log(selectedUser);
+      
           dispatch(editUser(selectedUser.id, selectedUser));
 
           Swal.fire("Saved!", "", "success");
